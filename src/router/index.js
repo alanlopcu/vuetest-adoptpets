@@ -1,42 +1,36 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
+import Router from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 import Cats from '../views/Cats.vue'
 import Dogs from '../views/Dogs.vue'
 import Pet from '../views/Pet.vue'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
     path: '/cats',
-    name: 'Cats',
+    name: 'cats',
     component: Cats
   },
   {
     path: '/dogs',
-    name: 'Dogs',
+    name: 'dogs',
     component: Dogs
   },
   {
     path: '/pets/:species/:id',
-    name: 'Pet',
+    name: 'pet',
     component: Pet
   }
 ]
 
-const router = new VueRouter({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
